@@ -1,0 +1,24 @@
+[project]
+name = "tavily-mcp-sse"
+version = "0.1.0"
+description = "Tavily MCP Server implementation in Python that supports both sse and stdio transport protocols."
+readme = "README.md"
+authors = [{ name = "MertAtesmen", email = "mertatesmen@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "anyio>=4.9.0",
+    "fastmcp>=2.8.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.11.5",
+]
+
+[project.scripts]
+tavily-mcp-sse = "tavily_mcp_sse:run_sse"
+tavily-mcp-stdio = "tavily_mcp_sse:run_stdio"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["basedpyright>=1.29.4", "ruff>=0.12.0"]
